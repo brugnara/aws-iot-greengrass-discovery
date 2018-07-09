@@ -1,11 +1,12 @@
 {
   "name": "aws-iot-greengrass-discovery",
   "version": "1.0.0",
-  "description": "",
+  "description": "aws iot greengrass discovery module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": "git@github.com:brugnara/aws-iot-greengrass-discovery.git",
   "author": "Daniele Brugnara <daniele@brugnara.me>",
   "license": "ISC",
   "dependencies": {
