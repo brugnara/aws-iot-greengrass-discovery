@@ -13,7 +13,7 @@ Include this module and use as stated into the `example.js` file.
 
 ```js
 const discovery = require('aws-iot-greengrass-discovery')({
-    awsIotEndPoint,
+    awsIotEndPoint: '123456.iot.eu-central-1.amazonaws.com',
     ca: fs.readFileSync('./root-CA.pem', 'utf8'),
     cert: fs.readFileSync(`./${thingName}.crt`, 'utf8'),
     key: fs.readFileSync(`./${thingName}.key`, 'utf8'),
@@ -22,8 +22,8 @@ const discovery = require('aws-iot-greengrass-discovery')({
 // get info
 const deviceInfo = await discovery('device1');
 const deviceInfo2 = await discovery('device2');
-// using callback
 
+// using callback
 discovery('device1', console.log.bind(console));
 ```
 
