@@ -20,21 +20,24 @@ if (!thingName || !awsIotEndPoint) {
 }
 
 (async function() {
-  const discovery = require('./')({
+  const discovery = require('./');
+
+  const options = {
     awsIotEndPoint,
+    thingName,
     ca: fs.readFileSync('./root-CA.pem', 'utf8'),
     cert: fs.readFileSync(`./${thingName}.crt`, 'utf8'),
     key: fs.readFileSync(`./${thingName}.key`, 'utf8'),
-  });
+  };
 
   try {
-    const gccInfo = await discovery(thingName);
+    const gccInfo = await discovery(options);
     debug(JSON.stringify(gccInfo));
   } catch(e) {
     throw e;
   }
 
-  discovery(thingName, console.log.bind(console));
+  discovery(options, console.log.bind(console));
 
 })().catch(e => {
   throw e;
